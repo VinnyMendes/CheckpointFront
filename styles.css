@@ -167,6 +167,9 @@ button:hover{
 .flashcard h2{
     font-size: 2.5rem;
 }
+.flashcard p{
+    font-size: 2rem;
+}
 
 @media(max-width:768px){
     .flashcard{

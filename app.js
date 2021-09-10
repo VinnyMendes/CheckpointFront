@@ -16,7 +16,7 @@ contentArray.forEach(divMaker);
 function divMaker(text){
     let div = document.createElement("div")
     let h2_question = document.createElement("h2")
-    let h2_answer = document.createElement("h2")
+    let h2_answer = document.createElement("p")
     let img = document.createElement("img")
     let img_div = document.createElement("div")
     let btn = document.createElement("button")
