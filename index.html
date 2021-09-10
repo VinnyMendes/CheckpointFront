@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4710/4710628.png" type="image/x-icon">
+    <title>FlashCards</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav">
+                <h1>MovieCards</h1>
+                <div>
+                    <button id="newCard" class="btn">New Movie</button>
+                    <button id="delCards" class="btn">Delete Movies</button>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="container">
+           
+            <div class="flashcards"></div>
+        </div>
+    </main>
+    <div class="modal" aria-expanded="false" data-transition="false">
+        <div class="create-box">
+            <h2>Create Flashcard</h2>
+            <div class="input-group">
+                <label for="question" class="label">Title</label>
+                <input type="text" id="question" name="question" class="input">
+                <p id="question-error"></p>
+            </div>
+            <div class="input-group">
+                <label for="answer" class="label">Description</label>
+                <input type="text" id="answer" name="answer" class="input">
+                <p id="answer-error"></p>
+            </div>
+            <div class="input-group">
+                <label for="url" class="label">Url</label>
+                <input type="text" id="url" name="url" class="input">
+                <p id="url-error"></p>
+            </div>
+            <div>
+                <button id="save" class="btn">Save</button>
+                <button id="close" class="btn">Close</button>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="./app.js"></script>
+</body>
+</html>
