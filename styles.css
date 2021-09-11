@@ -240,7 +240,7 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-content {
-  width: 38rem;
+  width: clamp(25rem, 40vw, 40rem);
   margin: auto;
   padding: 2rem;
   border-radius: 0.5rem;
