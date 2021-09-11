@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4710/4710628.png" type="image/x-icon">
     <title>MovieCards</title>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -29,7 +31,7 @@
     </header>
     <main>
         <div class="container">
-           
+
             <div class="flashcards"></div>
         </div>
     </main>
@@ -57,7 +59,33 @@
             </div>
         </div>
     </div>
+    <button id="contact">Contact Me</button>
+    <!-- Modal do contato -->
+    <div id="myModal" class="modalC">
+        <div class="modal-content">
+            <h3>Contact Me</h3>
+            <div class="input-group">
+                <label for="name" class="label">Name</label>
+                <input type="text" class="input" id="nameForm">
+            </div>
+            <div class="input-group">
+                <label for="email" class="label">Email</label>
+                <input type="text" class="input" id="emailForm">
+            </div>
+            <div class="input-group">
+                <label for="feedback" class="label">Feedback</label>
+                <textarea name="feedback" id="feedback" cols="30" rows="4" class="input""></textarea>
+          </div>
+          <div>
+              <button type="submit" class="btn" id="submitButton">Submit</button>
+              <button type="reset" class="btn" id="resetButton">Reset</button>
+          </div>
+        <div> 
+    </div>
+        </div>
+      </div>
+
     <!-- JavaScript -->
-    <script src="./app.js"></script>
+    <script src=" ./app.js"></script>
 </body>
 </html>

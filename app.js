@@ -149,3 +149,29 @@ function delFlashcard(id){
     localStorage.setItem('items', JSON.stringify(filtered))
 
 }
+
+const modalC = document.getElementById("myModal");
+const btnC = document.getElementById("contact");
+const resetForm = document.getElementById("resetButton")
+const submitForm = document.getElementById("submitButton")
+const nameForm = document.getElementById("nameForm")
+const emailForm = document.getElementById("emailForm")
+const feedbackForm = document.getElementById("feedback")
+btnC.onclick = function() {
+  modalC.style.display = "block";
+}
+window.onclick = function(event) {
+  if (event.target == modalC) {
+    modalC.style.display = "none";
+  }
+}
+resetForm.addEventListener("click",()=>{
+    nameForm.value=""
+    emailForm.value=""
+    feedbackForm.value=""
+})
+submitForm.addEventListener("click",(event)=>{
+    event.preventDefault()
+    alert("Thank you for your feedback")
+    modalC.style.display = "none";
+})
