@@ -131,8 +131,9 @@ function addFlashcard() {
 
 function toggleCreateBox() {
   let newExpanded =
-    modal.getAttribute("aria-expanded") === "false" ? "true" : "false";
+  modal.getAttribute("aria-expanded") === "false" ? "true" : "false";
   modal.setAttribute("aria-expanded", newExpanded);
+  question.focus()
 
   setTimeout(() => {
     let newTransition =
