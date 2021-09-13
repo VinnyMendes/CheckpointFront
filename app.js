@@ -14,8 +14,8 @@ const nameForm = document.getElementById("nameForm");
 const emailForm = document.getElementById("emailForm");
 const feedbackForm = document.getElementById("feedback");
 
-let contentArray = localStorage.getItem("items")
-  ? JSON.parse(localStorage.getItem("items"))
+let contentArray = localStorage.getItem("itemsM")
+  ? JSON.parse(localStorage.getItem("itemsM"))
   : [];
 // Escutadores nos botões
 document.getElementById("newCard").addEventListener("click", toggleCreateBox);
@@ -121,7 +121,7 @@ function addFlashcard() {
     return;
   }
   contentArray.push(flashcard_info);
-  localStorage.setItem("items", JSON.stringify(contentArray));
+  localStorage.setItem("itemsM", JSON.stringify(contentArray));
   divMaker(contentArray[contentArray.length - 1]);
   question.value = "";
   answer.value = "";
@@ -177,7 +177,7 @@ function delFlashcards() {
   if (!confirmation) {
     return;
   }
-  localStorage.removeItem("items");
+  localStorage.removeItem("itemsM");
   flashcards.innerHTML = "";
   contentArray = [];
 }
@@ -188,7 +188,7 @@ function delFlashcard(id) {
   }
   const filtered = contentArray.filter((card) => card.id != id);
   document.getElementById(id).remove();
-  localStorage.setItem("items", JSON.stringify(filtered));
+  localStorage.setItem("itemsM", JSON.stringify(filtered));
 }
 resetForm.addEventListener("click", () => {
   nameForm.value = "";
