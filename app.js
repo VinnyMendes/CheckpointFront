@@ -1,10 +1,12 @@
+// Buscando os elementos do html
+// Elementos do modal de criação
 const flashcards = document.getElementsByClassName("flashcards")[0];
 const createBox = document.getElementsByClassName("create-box")[0];
 const question = document.getElementById("question");
 const img_url = document.getElementById("url");
 const answer = document.getElementById("answer");
 const modal = document.getElementsByClassName("modal")[0];
-
+// Elementos do modal de feedback
 const modalC = document.getElementById("myModal");
 const modalContent = document.getElementById("modal-content");
 const btnC = document.getElementById("contact");
@@ -13,10 +15,11 @@ const submitForm = document.getElementById("submitButton");
 const nameForm = document.getElementById("nameForm");
 const emailForm = document.getElementById("emailForm");
 const feedbackForm = document.getElementById("feedback");
-
+// Array com os items do local storage, caso o local storage esteja vazio, o array também estará
 let contentArray = localStorage.getItem("itemsM")
   ? JSON.parse(localStorage.getItem("itemsM"))
   : [];
+
 // Escutadores nos botões
 document.getElementById("newCard").addEventListener("click", toggleCreateBox);
 document.getElementById("delCards").addEventListener("click", delFlashcards);
@@ -24,7 +27,13 @@ document.getElementById("save").addEventListener("click", addFlashcard);
 document.getElementById("close").addEventListener("click", toggleCreateBox);
 btnC.addEventListener("click", toggleCreateFeedback);
 
+// Pra cada elemento do array de conteúdo vai chamar a função divMaker
 contentArray.forEach(divMaker);
+
+// function: divMaker
+// arguments: text: Object; Cada elemento do array é um objeto
+// returns: void
+// use: é usada para renderizar os cards
 
 function divMaker(text) {
   let div = document.createElement("div");
@@ -83,6 +92,12 @@ function divMaker(text) {
   });
   flashcards.appendChild(div);
 }
+
+// function: addFlashCard()
+// arguments: null
+// returns: void
+// use: adiciona um objeto ao array de conteudo e usa o divMaker para renderizar o novo card
+
 function addFlashcard() {
   question.setAttribute("data-invalid", "false");
   answer.setAttribute("data-invalid", "false");
@@ -129,6 +144,11 @@ function addFlashcard() {
   toggleCreateBox();
 }
 
+// function: toggleCreate
+// arguments: null
+// returns: void
+// use: Alterna a exibição da caixa de criação de card
+
 function toggleCreateBox() {
   let newExpanded =
   modal.getAttribute("aria-expanded") === "false" ? "true" : "false";
@@ -146,6 +166,11 @@ modal.addEventListener("click", toggleCreateBox);
 createBox.addEventListener("click", (event) => {
   event.stopPropagation();
 });
+
+// function: toggleCreateFeedback
+// arguments: null
+// returns: void
+// use: Alterna a exibição do feedback
 
 function toggleCreateFeedback() {
   let newExpanded =
@@ -165,12 +190,22 @@ modalContent.addEventListener("click", (event) => {
   event.stopPropagation();
 });
 
+// function: resetError
+// arguments: null
+// returns: void
+// use: É usado para resetar o erro exibido quando os inputs não são validados
+
 function resetError() {
   question.setAttribute("data-invalid", "false");
   answer.setAttribute("data-invalid", "false");
   document.getElementById("question-error").innerText = "";
   document.getElementById("answer-error").innerText = "";
 }
+
+// function: delFlashcards
+// arguments: null
+// returns: void
+// use: Apaga todo o conteúdo dentro do array de e também do localstorage
 
 function delFlashcards() {
   let confirmation = confirm(
@@ -183,6 +218,12 @@ function delFlashcards() {
   flashcards.innerHTML = "";
   contentArray = [];
 }
+
+// function: delFlashcard
+// arguments: id: String; id específico de cada card
+// returns: void
+// use: Usado para apagar e remover cards específicos
+
 function delFlashcard(id) {
   let confirmation = confirm("Do you really want to delete this moviecard?");
   if (!confirmation) {
