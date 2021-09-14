@@ -149,8 +149,9 @@ createBox.addEventListener("click", (event) => {
 
 function toggleCreateFeedback() {
   let newExpanded =
-    modalC.getAttribute("aria-expanded") === "false" ? "true" : "false";
+  modalC.getAttribute("aria-expanded") === "false" ? "true" : "false";
   modalC.setAttribute("aria-expanded", newExpanded);
+  nameForm.focus()
 
   setTimeout(() => {
     let newTransition =
